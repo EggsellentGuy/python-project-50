@@ -8,11 +8,11 @@ def main():
     )
 
     parser.add_argument(
-        'first_file', help="The path to the first file"
+        'first_file'
     )
 
     parser.add_argument(
-        'second_file', help="The path to the second file"
+        'second_file'
     )
 
     parser.add_argument(
