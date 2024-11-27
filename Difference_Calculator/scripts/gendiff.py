@@ -4,10 +4,13 @@ import argparse as arg
 
 def main():
     parser = arg.ArgumentParser(
-        description="Compares two configuration files and shows a difference")
+        description="Compares two configuration files and shows a difference"
+    )
+
     parser.add_argument(
         'first_file', help="The path to the first file"
     )
+
     parser.add_argument(
         'second_file', help="The path to the second file"
     )
@@ -15,9 +18,8 @@ def main():
     parser.add_argument(
         '-f', '--format', help="Set format of output",
     )
+
     args = parser.parse_args()
-    print("Первый файл:", args.first_file)
-    print("Второй файл:", args.second_file)
 
 
 if __name__ == "__main__":
