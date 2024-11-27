@@ -16,7 +16,7 @@ def main():
     )
 
     parser.add_argument(
-        '-f', '--format', help="Set format of output",
+        '-f', '--format', help="Set format of output"
     )
 
     args = parser.parse_args()
