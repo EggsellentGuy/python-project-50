@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse as arg
+from Difference_Calculator.read_json_file import read_file
 
 
 def main():
@@ -20,6 +21,9 @@ def main():
     )
 
     args = parser.parse_args()
+
+    first_data = read_file(args.first_file)
+    second_data = read_file(args.second_file)
 
 
 if __name__ == "__main__":
