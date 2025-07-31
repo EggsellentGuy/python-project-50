@@ -16,3 +16,14 @@ packages = ["Difference_Calculator"]
 
 [project.scripts]
 gendiff = "Difference_Calculator.scripts.gendiff:main"
+
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+preview = true
+select = ["E", "F", "I", "C90"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
