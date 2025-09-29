@@ -2,7 +2,7 @@
 
 import argparse
 
-from Difference_Calculator.generate_diff import generate_diff
+from gendiff.generate_diff import generate_diff
 
 
 def main():

@@ -1,4 +1,4 @@
-from Difference_Calculator.read_json_file import read_file
+from gendiff.read_json_file import read_file
 
 
 def generate_diff(file_path1, file_path2):
