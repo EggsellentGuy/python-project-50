@@ -15,3 +15,9 @@ def test_flat_json_stylish():
     got = generate_diff(p("file1.json"), p("file2.json"))
     expected = read_text("expected_stylish_flat.txt")
     assert got.rstrip() == expected.rstrip()
+
+
+def test_flat_yaml_stylish():
+    got = generate_diff(p("filepath1.yml"), p("filepath2.yml"))
+    expected = read_text("expected_stylish_flat.txt")
+    assert got.rstrip() == expected.rstrip()
