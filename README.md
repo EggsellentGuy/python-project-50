@@ -4,7 +4,4 @@
 <a href="https://asciinema.org/a/2t4vaArz4Kk28LLWVnwD5I9lo" target="_blank"><img src="https://asciinema.org/a/2t4vaArz4Kk28LLWVnwD5I9lo.svg" /></a>
 
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=EggsellentGuy_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=EggsellentGuy_python-project-50)
-
-
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=EggsellentGuy_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=EggsellentGuy_python-project-50)
