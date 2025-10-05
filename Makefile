@@ -1,3 +1,13 @@
+install:
+	uv sync --dev
+
 lint:
-	ruff check .
+	uv run ruff check .
+
+check:
+	make lint
+	uv run pytest -q
+
+test-coverage:
+	uv run pytest --cov=gendiff --cov-report=xml
 
