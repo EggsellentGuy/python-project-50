@@ -33,3 +33,16 @@ def test_nested_yaml_stylish():
     got = generate_diff(p("file1_nested.yml"), p("file2_nested.yml"))
     expected = read_text("expected_stylish_nested.txt")
     assert got.rstrip() == expected.rstrip()
+
+
+def test_nested_json_plain():
+    got = generate_diff(p("file1_nested.json"),
+                        p("file2_nested.json"), "plain")
+    expected = read_text("expected_plain_nested.txt")
+    assert got.rstrip() == expected.rstrip()
+
+
+def test_nested_yaml_plain():
+    got = generate_diff(p("file1_nested.yml"), p("file2_nested.yml"), "plain")
+    expected = read_text("expected_plain_nested.txt")
+    assert got.rstrip() == expected.rstrip()
