@@ -21,3 +21,15 @@ def test_flat_yaml_stylish():
     got = generate_diff(p("filepath1.yml"), p("filepath2.yml"))
     expected = read_text("expected_stylish_flat.txt")
     assert got.rstrip() == expected.rstrip()
+
+
+def test_nested_json_stylish():
+    got = generate_diff(p("file1_nested.json"), p("file2_nested.json"))
+    expected = read_text("expected_stylish_nested.txt")
+    assert got.rstrip() == expected.rstrip()
+
+
+def test_nested_yaml_stylish():
+    got = generate_diff(p("file1_nested.yml"), p("file2_nested.yml"))
+    expected = read_text("expected_stylish_nested.txt")
+    assert got.rstrip() == expected.rstrip()

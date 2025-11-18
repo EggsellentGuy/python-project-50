@@ -1,35 +1,11 @@
+from gendiff.diff_tree import build_diff
+from gendiff.formatters import format_diff
 from gendiff.parsers import parse_file
 
 
-def generate_diff(file_path1, file_path2):
-    def format_value(value):
-        if isinstance(value, bool):
-            return str(value).lower()
-        return value
-
+def generate_diff(file_path1, file_path2, format_name="stylish"):
     first_data = parse_file(file_path1)
     second_data = parse_file(file_path2)
 
-    all_keys = sorted(set(first_data.keys()) | set(second_data.keys()))
-    result_line = []
-
-    for key in all_keys:
-        key_in_first = key in first_data
-        key_in_second = key in second_data
-
-        if key_in_first and key_in_second:
-            if first_data[key] == second_data[key]:
-                result_line.append(
-                    f"    {key}: {format_value(first_data[key])}")
-            else:
-                result_line.append(
-                    f"  - {key}: {format_value(first_data[key])}")
-                result_line.append(
-                    f"  + {key}: {format_value(second_data[key])}")
-        elif key_in_first:
-            result_line.append(f"  - {key}: {format_value(first_data[key])}")
-        elif key_in_second:
-            result_line.append(f"  + {key}: {format_value(second_data[key])}")
-
-    diff_str = "{\n" + "\n".join(result_line) + "\n}"
-    return diff_str
+    diff_tree = build_diff(first_data, second_data)
+    return format_diff(diff_tree, format_name)
