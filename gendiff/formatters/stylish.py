@@ -37,24 +37,18 @@ def stringify(value, depth):
 def render_added(node, depth):
     indent = make_indent(depth, with_sign=True)
     value_str = stringify(node["value"], depth)
-    if value_str == "":
-        return [f"{indent}+ {node['key']}:"]
     return [f"{indent}+ {node['key']}: {value_str}"]
 
 
 def render_removed(node, depth):
     indent = make_indent(depth, with_sign=True)
     value_str = stringify(node["value"], depth)
-    if value_str == "":
-        return [f"{indent}- {node['key']}:"]
     return [f"{indent}- {node['key']}: {value_str}"]
 
 
 def render_unchanged(node, depth):
     indent = make_indent(depth, with_sign=True)
     value_str = stringify(node["value"], depth)
-    if value_str == "":
-        return [f"{indent}  {node['key']}:"]
     return [f"{indent}  {node['key']}: {value_str}"]
 
 
@@ -63,19 +57,10 @@ def render_changed(node, depth):
     old_str = stringify(node["old_value"], depth)
     new_str = stringify(node["new_value"], depth)
 
-    lines = []
-
-    if old_str == "":
-        lines.append(f"{indent}- {node['key']}:")
-    else:
-        lines.append(f"{indent}- {node['key']}: {old_str}")
-
-    if new_str == "":
-        lines.append(f"{indent}+ {node['key']}:")
-    else:
-        lines.append(f"{indent}+ {node['key']}: {new_str}")
-
-    return lines
+    return [
+        f"{indent}- {node['key']}: {old_str}",
+        f"{indent}+ {node['key']}: {new_str}",
+    ]
 
 
 NODE_RENDERERS = {
