@@ -13,3 +13,7 @@ ruff_cache/
 
 demo.cast
 
+.coverage
+coverage.xml
+htmlcov/
+
