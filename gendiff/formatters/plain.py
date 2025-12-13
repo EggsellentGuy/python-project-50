@@ -1,4 +1,4 @@
-from gendiff.diff_tree import ADDED, CHANGED, NESTED, REMOVED, UNCHANGED
+from gendiff.core.diff_tree import ADDED, CHANGED, NESTED, REMOVED, UNCHANGED
 
 
 def to_plain_value(value):
@@ -25,7 +25,8 @@ def walk(nodes, parent_path=""):
             lines.extend(walk(node["children"], path))
         elif node_type == ADDED:
             value_str = to_plain_value(node["value"])
-            lines.append(f"Property '{path}' was added with value: {value_str}")
+            lines.append(
+                f"Property '{path}' was added with value: {value_str}")
         elif node_type == REMOVED:
             lines.append(f"Property '{path}' was removed")
         elif node_type == CHANGED:

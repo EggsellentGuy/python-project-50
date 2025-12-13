@@ -1,4 +1,4 @@
-from gendiff.diff_tree import ADDED, CHANGED, NESTED, REMOVED, UNCHANGED
+from gendiff.core.diff_tree import ADDED, CHANGED, NESTED, REMOVED, UNCHANGED
 
 INDENT_SIZE = 4
 SIGN_SHIFT = 2

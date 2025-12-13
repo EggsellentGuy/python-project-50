@@ -1,9 +1,9 @@
 import json
 from pathlib import Path
 
-from gendiff.diff_tree import build_diff
-from gendiff.generate_diff import generate_diff
-from gendiff.parsers import parse_file
+from gendiff import generate_diff
+from gendiff.core.diff_tree import build_diff
+from gendiff.core.parsers import parse_file
 
 
 def p(name):
